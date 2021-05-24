@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="tex/css">
+    .container{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    </style>
+    <title>Data Covid-19 </title>
+</head>
+<body style="background-color: black;">
+    
+
+        <h1 style="color: white; text-align: center; margin-top: 50px;"><span style="color: red;">COVID-19</span>WORDWIDE DATA</h1>
+        <form action="" method="POST" class="d-flex justify-content-center align-items-center">
+            {% csrf_token %}
+            <select  name="selectcontry" class="form-control" style="width: 200px;">
+                {% for mylist in mylists %}
+                <option >{{ mylist }}</option>
+                {% endfor %}
+              </select>
+              <input type="submit" class="btn btn-danger" value="Search" style="margin-left: 5px;">
+        </form>
+        <h2 style="color: white; margin-top: 50px; text-align: center;">{{ selectcontry }}</h2>
+
+        <div class="d-flex justify-content-center align-items-center mt-5">
+            <div class="container" style="height: 100px; width: 200px; background-color: ghostwhite; border-radius: 10px;">
+                <h1 style="text-align: center;">{{ new }}</h1>
+                <p style="text-align: center;">new</p>
+            </div>
+            <div class="container" style="height: 100px; width: 200px; background-color: blue; border-radius: 10px;">
+                <h1 style="text-align: center;" >{{ total }}</h1>
+                <p style="text-align: center;">total cases</p>
+            </div>
+            <div class="container" style="height: 100px; width: 200px; background-color: green;border-radius: 10px">
+                <h1 style="text-align: center;">{{ recovered }}</h1>
+                <p style="text-align: center;"> recovered</p>
+            </div>
+            <div class="container" style="height: 100px; width: 200px; background-color: yellow;border-radius: 10px">
+                <h1 style="text-align: center;">{{ active }}</h1>
+                <p style="text-align: center;">active</p>
+            </div>
+            <div class="container" style="height: 100px; width: 200px; background-color: red;border-radius: 10px">
+                <h1 style="text-align: center;">{{ deaths }}</h1>
+                <p style="text-align: center;">death</p>
+            </div>
+            <div class="container" style="height: 100px; width: 200px; background-color: orange; border-radius: 10px">
+                <h1 style="text-align: center;">{{ critical }}</h1>
+                <p style="text-align: center;">critical</p>
+            </div>
+        </div>
+        <p style="color: gray; margin-top: 530px; text-align: center;"> Developer By<span style="color:white ;">Abdul</span></p>
+     
+   
+   
+
+  
+ 
+</body>
+</html>
